@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Wanderlust Explorer
 
-## Getting Started
+Explorador de experiencias de viaje construido con Next.js, React y TypeScript. Permite buscar y filtrar 100 experiencias por título, categoría y destino, con los filtros guardados en la URL para poder compartir cada búsqueda, y marcar favoritos.
 
-First, run the development server:
+## Tecnologías
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Next.js (App Router), React, TypeScript y Tailwind CSS.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Cómo correrlo
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Instala las dependencias con `npm install` y arranca el servidor con `npm run dev`. La app queda en http://localhost:3000.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Design References
 
-## Learn More
+Antes de escribir los componentes estudié interfaces reales de descubrimiento de experiencias, que combinan tarjetas, búsqueda y filtros. Tomé inspiración de dos plataformas. No copié su código ni sus recursos gráficos: solo patrones de diseño y de organización de la información.
 
-To learn more about Next.js, take a look at the following resources:
+### 1. Klook
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Sitio: [Klook, destino Hong Kong](https://www.klook.com/destination/c2-hong-kong/)
+- Páginas que estudié: destino y resultados de búsqueda con panel de filtros.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+![Klook, página de destino](docs/design-references/klook-destino.png)
+![Klook, resultados y filtros](docs/design-references/klook-resultados.png)
 
-## Deploy on Vercel
+**Qué tomé de esta referencia:**
+- Navegación en pestañas con subrayado naranja en la sección activa.
+- Tarjetas de experiencia con corazón sobre la imagen, categoría y destino en gris, rating y precio.
+- Panel de filtros en una tarjeta lateral, con secciones separadas por líneas finas y botones de rating en grupo.
+- Barra para ordenar los resultados, y un bloque de texto informativo con preguntas frecuentes en acordeón al final de la página.
+- Paleta con naranja como acento y un badge índigo para las valoraciones.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 2. Viator
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Sitio: [Viator](https://www.viator.com/)
+- Páginas que estudié: inicio y detalle de una actividad.
+
+![Viator, inicio](docs/design-references/viator-inicio.png)
+![Viator, detalle](docs/design-references/viator-detalle.png)
+
+**Qué tomé de esta referencia:**
+- Hero a ancho completo con un buscador en forma de píldora.
+- Destinos destacados en una cuadrícula de fotos con el nombre encima.
+- Secciones de texto explicativo sobre fondos de color suave, que dan ritmo entre las secciones de tarjetas.
+- Página de detalle con una tarjeta de precio fija a la derecha, opiniones con distribución por estrellas y experiencias similares al final.
+- Footer oscuro con redes sociales, columnas de enlaces y botón flotante de volver al principio.
+
+### Cómo se traduce en Wanderlust Explorer
+
+| Elemento de inspiración | Origen | Dónde se aplica |
+| --- | --- | --- |
+| Pestañas con subrayado en la sección activa | Klook | Navbar con enlace activo |
+| Tarjeta con corazón sobre la imagen | Klook y Viator | ExperienceCard |
+| Panel de filtros en una tarjeta lateral | Klook | FilterBar en /experiences |
+| Bloque informativo y FAQ en acordeón | Klook | Final del Explorador |
+| Hero con buscador en píldora | Viator | Home |
+| Destinos destacados con foto | Viator | Home, enlazados a filtros por URL |
+| Bandas de texto en color suave | Viator | Home |
+| Tarjeta de precio fija y opiniones | Viator | Detalle de la experiencia |
+| Footer oscuro y botón de volver arriba | Viator | Footer y BackToTop |
+
+### Lo que decidí no incluir
+
+Reservas, inicio de sesión, gráficos de demanda y precios, y mapas. Quedan fuera del alcance de este MVP, que se centra en explorar, filtrar y guardar favoritos.
