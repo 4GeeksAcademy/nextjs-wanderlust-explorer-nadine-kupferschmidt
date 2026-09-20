@@ -10,6 +10,7 @@ App multipágina con Next.js (App Router) + TypeScript + Tailwind. Explorador de
 - Navegación con `next/link` (sin recargas completas). Componentes de servidor por defecto; `"use client"` solo donde se usen hooks.
 - `useSearchParams` debe ir dentro de un `<Suspense>`. En rutas dinámicas, `params` es una Promise (`await params` o `use(params)`).
 - Imágenes: placeholders de `picsum.photos`; configurar `images.remotePatterns` en `next.config.ts`.
+- No llames a setState directamente dentro de un useEffect (el lint lo marca como error: react-hooks/set-state-in-effect). Los datos derivados, como los resultados filtrados, se calculan durante el render con useMemo. Usa useEffect solo para sincronizar con sistemas externos, por ejemplo document.title.
 - Respuestas breves: al terminar, resume en 3 líneas como máximo.
 
 ## Rutas
