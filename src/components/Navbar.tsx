@@ -37,14 +37,14 @@ export default function Navbar() {
             <li key={href}>
               <Link
                 href={href}
-                className={`relative pb-1 text-sm font-medium transition-colors ${
+                className={`inline-flex items-center border-b-2 text-sm font-medium transition-colors ${
                   isActive(href)
-                    ? "text-orange-500 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-orange-500"
-                    : "text-neutral-700 hover:text-neutral-900"
+                    ? "border-orange-500 text-orange-500"
+                    : "border-transparent text-neutral-700 hover:text-neutral-900"
                 }`}
               >
                 {label === "Favoritos" ? (
-                  <span className="inline-flex items-center gap-1.5">
+                  <span className="relative inline-flex items-center gap-1.5">
                     <svg
                       className="h-4 w-4"
                       viewBox="0 0 24 24"
@@ -55,7 +55,7 @@ export default function Navbar() {
                     </svg>
                     {label}
                     {count > 0 && (
-                      <span className="flex h-5 min-w-5 items-center justify-center rounded-full bg-orange-500 px-1.5 text-xs font-bold text-white">
+                      <span className="absolute -top-2 -right-3 flex h-4 min-w-4 items-center justify-center rounded-full bg-orange-500 px-1 text-[10px] font-bold text-white">
                         {count}
                       </span>
                     )}
