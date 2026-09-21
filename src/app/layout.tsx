@@ -3,6 +3,8 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import { FavoritesProvider } from "@/components/FavoritesProvider";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import BackToTop from "@/components/BackToTop";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -19,10 +21,12 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es" className={`${poppins.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col font-sans">
+      <body className="flex min-h-full flex-col font-sans">
         <FavoritesProvider>
           <Navbar />
           <main className="flex-1">{children}</main>
+          <Footer />
+          <BackToTop />
         </FavoritesProvider>
       </body>
     </html>
