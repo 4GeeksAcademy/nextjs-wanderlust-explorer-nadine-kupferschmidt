@@ -4,6 +4,7 @@ import { experiences } from "@/data/experiences";
 import FeaturedExperiences from "@/components/FeaturedExperiences";
 import AboutSection from "@/components/AboutSection";
 import BenefitsSection from "@/components/BenefitsSection";
+import type { Experience } from "@/types/experience";
 
 function getFeaturedByCategory(
   source: typeof experiences,
@@ -22,7 +23,7 @@ export default function Home() {
   const categories = ["Adventure", "Food", "Nature"] as const;
   const featured = categories
     .map((cat) => getFeaturedByCategory(experiences, cat))
-    .filter(Boolean);
+    .filter((item): item is Experience => item !== null);
 
   return (
     <>
