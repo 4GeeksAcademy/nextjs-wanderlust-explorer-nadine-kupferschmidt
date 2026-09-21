@@ -51,13 +51,14 @@ Antes de escribir los componentes estudié interfaces reales de descubrimiento d
 | Pestañas con subrayado en la sección activa | Klook | Navbar con enlace activo |
 | Tarjeta con corazón sobre la imagen | Klook y Viator | ExperienceCard |
 | Panel de filtros en una tarjeta lateral | Klook | FilterBar en /experiences |
+| Buscador en forma de píldora | Viator | SearchBar en /experiences |
 | Bloque informativo y FAQ en acordeón | Klook | Final del Explorador |
-| Hero con buscador en píldora | Viator | Home |
-| Destinos destacados con foto | Viator | Home, enlazados a filtros por URL |
-| Bandas de texto en color suave | Viator | Home |
+| Fila de actividades destacadas | Klook y Viator | Home, experiencias destacadas |
+| Fila de beneficios con íconos | Viator | Home, "¿Por qué Wanderlust?" |
+| Banda de texto en color suave | Viator | Home, "¿Qué es Wanderlust?" |
 | Tarjeta de precio fija y opiniones | Viator | Detalle de la experiencia |
 | Footer oscuro y botón de volver arriba | Viator | Footer y BackToTop |
 
 ### Lo que decidí no incluir
 
-Reservas, inicio de sesión, gráficos de demanda y precios, y mapas. Quedan fuera del alcance de este MVP, que se centra en explorar, filtrar y guardar favoritos.
+Reservas, inicio de sesión, gráficos de demanda y precios, mapas, galería de fotos y ordenamiento de resultados. Quedan fuera del alcance de este MVP, que se centra en explorar, filtrar y guardar favoritos.
